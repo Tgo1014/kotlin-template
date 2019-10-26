@@ -6,6 +6,8 @@ import android.util.DisplayMetrics
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 fun Fragment.hideKeyboard() {
     activity?.hideKeyboard()
@@ -30,4 +32,8 @@ fun Fragment.dpToPx(dp: Int): Int {
 
 fun Context.dpToPx(dp: Int): Int {
     return (dp * (resources.displayMetrics.densityDpi.toFloat() / DisplayMetrics.DENSITY_DEFAULT)).toInt()
+}
+
+suspend fun runOnIO(f: suspend () -> Unit) {
+    withContext(Dispatchers.IO) { f() }
 }
