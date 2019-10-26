@@ -4,7 +4,6 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
-import dk.nodes.nstack.kotlin.providers.NMetaInterceptor
 import dk.nodes.template.BuildConfig
 import dk.nodes.template.network.Api
 import dk.nodes.template.network.util.BufferedSourceConverterFactory
@@ -15,7 +14,7 @@ import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.Date
+import java.util.*
 import java.util.concurrent.TimeUnit
 import javax.inject.Named
 import javax.inject.Singleton
@@ -45,7 +44,7 @@ class RestModule {
     @Provides
     @Named("NAME_BASE_URL")
     fun provideBaseUrlString(): String {
-        return BuildConfig.API_URL
+        return "" //BuildConfig.API_URL
     }
 
     @Provides
@@ -61,12 +60,11 @@ class RestModule {
             .connectTimeout(45, TimeUnit.SECONDS)
             .readTimeout(60, TimeUnit.SECONDS)
             .writeTimeout(60, TimeUnit.SECONDS)
-            .addInterceptor(NMetaInterceptor(BuildConfig.BUILD_TYPE))
 
         if (BuildConfig.DEBUG) {
-            val logging = okhttp3.logging.HttpLoggingInterceptor()
-            logging.level = okhttp3.logging.HttpLoggingInterceptor.Level.BODY
-            clientBuilder.addInterceptor(logging)
+//            val logging = okhttp3.logging.HttpLoggingInterceptor()
+//            logging.level = okhttp3.logging.HttpLoggingInterceptor.Level.BODY
+//            clientBuilder.addInterceptor(logging)
         }
 
         return clientBuilder.build()

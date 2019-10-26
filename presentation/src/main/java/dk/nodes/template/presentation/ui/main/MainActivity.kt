@@ -22,9 +22,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun handleNStack(viewState: MainActivityViewState) {
-        viewState.nstackMessage?.let { showMessageDialog(it) }
-        viewState.nstackRateReminder?.let { showRateReminderDialog(it) }
-        viewState.nstackUpdate?.let { showChangelogDialog(it) }
+
     }
 
     override fun onDestroy() {
