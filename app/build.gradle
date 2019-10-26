@@ -15,7 +15,7 @@ android {
         targetSdkVersion sdks.targetSdkVersion
         multiDexEnabled true
         versionCode 1
-        versionName "2.0.3"
+        versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         compileOptions {
@@ -101,7 +101,6 @@ dependencies {
     implementation "org.koin:koin-androidx-viewmodel:${versions.koin_version}"
     implementation "org.koin:koin-androidx-ext:${versions.koin_version}"
 
-    implementation "net.hockeyapp.android:HockeySDK:${versions.hockey_sdk}"
     implementation "com.jakewharton.timber:timber:${versions.timber}"
 
     implementation("com.squareup.retrofit2:retrofit:${versions.retrofit}")
@@ -142,4 +141,5 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata:${versions.lifecycle}"
     kapt "androidx.lifecycle:lifecycle-common-java8:${versions.lifecycle}"
     implementation "androidx.core:core-ktx:${versions.ktx}"
+    implementation "androidx.preference:preference-ktx:${versions.preference}"
 }

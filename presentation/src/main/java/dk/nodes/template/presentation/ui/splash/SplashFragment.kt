@@ -12,7 +12,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SplashFragment : BaseFragment() {
 
-    private val splashViewModel : SplashViewModel by viewModel()
+    private val splashViewModel: SplashViewModel by viewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_splash, container, false)
@@ -33,8 +33,7 @@ class SplashFragment : BaseFragment() {
     }
 
     private fun showApp() {
-        startActivity(MainActivity.createIntent(requireContext()))
+        startActivity(MainActivity.start(requireContext()))
         activity?.overridePendingTransition(0, 0)
     }
-
 }

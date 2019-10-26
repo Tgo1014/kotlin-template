@@ -7,13 +7,10 @@ import com.google.gson.JsonParseException
 import java.lang.reflect.Type
 import java.text.ParseException
 import java.text.SimpleDateFormat
-import java.util.Arrays
-import java.util.Date
-import java.util.HashMap
-import java.util.Locale
+import java.util.*
 
 class DateDeserializer : JsonDeserializer<Date> {
-    @Throws(JsonParseException::class)
+
     override fun deserialize(
         jsonElement: JsonElement,
         typeOF: Type,
@@ -30,8 +27,7 @@ class DateDeserializer : JsonDeserializer<Date> {
             }
         }
         throw JsonParseException(
-            "Unparseable date: \"" + jsonElement.asString +
-                "\". Supported formats: " + Arrays.toString(DATE_FORMATS)
+                "Unparseable date: \"${jsonElement.asString}\". Supported formats: ${DATE_FORMATS.contentToString()}"
         )
     }
 

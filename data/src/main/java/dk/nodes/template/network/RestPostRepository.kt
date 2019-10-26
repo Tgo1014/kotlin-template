@@ -23,5 +23,4 @@ class RestPostRepository constructor(private val api: Api) : PostRepository {
             ))
         }
     }
-
 }

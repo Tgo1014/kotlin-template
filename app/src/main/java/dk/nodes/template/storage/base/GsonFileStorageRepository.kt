@@ -10,9 +10,9 @@ import java.io.InputStreamReader
 import java.lang.reflect.Type
 
 abstract class GsonFileStorageRepository<T>(
-        private val context: Context,
-        private val gson: Gson,
-        private val filename: String
+    private val context: Context,
+    private val gson: Gson,
+    private val filename: String
 ) {
 
     @Throws(RepositoryException::class)

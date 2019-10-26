@@ -7,7 +7,6 @@ buildscript {
             coroutines         : '1.3.2',
             constraint_layout  : '2.0.0-beta3',
             lifecycle          : "2.1.0",
-            hockey_sdk         : "5.2.0",
             timber             : "4.7.1",
             junit              : '4.12',
             espresso           : '3.2.0',
@@ -23,7 +22,8 @@ buildscript {
             material           : '1.2.0-alpha01',
             archCore           : '2.1.0',
             navigation         : '2.1.0',
-            koin_version       : '2.0.1'
+            koin_version       : '2.0.1',
+            preference         : '1.1.0'
     ]
 
     ext.sdks = [

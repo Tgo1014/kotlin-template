@@ -13,7 +13,7 @@ class SplashViewModel : BaseViewModel<SplashViewState>() {
 
     fun initAppState() = viewModelScope.launch {
         Timber.d("initAppState() - start")
-        val deferredAppOpen = async(Dispatchers.IO) {  }
+        val deferredAppOpen = async(Dispatchers.IO) { }
         // Other API calls that might be needed
         // ...
         // Splash should be shown for min. x milliseconds
@@ -31,6 +31,5 @@ class SplashViewModel : BaseViewModel<SplashViewState>() {
 //            }
             else -> state.copy(doneLoading = true)
         }
-
     }
 }

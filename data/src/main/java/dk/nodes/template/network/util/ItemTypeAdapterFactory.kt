@@ -10,6 +10,7 @@ import com.google.gson.stream.JsonWriter
 import java.io.IOException
 
 class ItemTypeAdapterFactory : TypeAdapterFactory {
+
     var rootContainerNames = listOf("data")
 
     override fun <T> create(gson: Gson, type: TypeToken<T>): TypeAdapter<T> {

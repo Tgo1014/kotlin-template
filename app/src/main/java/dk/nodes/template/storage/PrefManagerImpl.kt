@@ -1,15 +1,13 @@
 package dk.nodes.template.storage
 
 import android.content.Context
-import android.content.SharedPreferences
-import android.preference.PreferenceManager
 import androidx.core.content.edit
+import androidx.preference.PreferenceManager
 import dk.nodes.template.domain.managers.PrefManager
-import javax.inject.Inject
 
-class PrefManagerImpl @Inject constructor(context: Context) : PrefManager {
-    private var sharedPrefs: SharedPreferences =
-        PreferenceManager.getDefaultSharedPreferences(context)
+class PrefManagerImpl constructor(context: Context) : PrefManager {
+
+    private var sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context)
 
     override fun getInt(key: String, defaultValue: Int): Int {
         return sharedPrefs.getInt(key, defaultValue)

@@ -10,7 +10,7 @@ import kotlinx.coroutines.withContext
 class MainActivityViewModel : BaseViewModel<MainActivityViewState>() {
     override val initState: MainActivityViewState = MainActivityViewState()
 
-    fun checkNStack() = viewModelScope.launch {
+    fun example() = viewModelScope.launch {
         // Delay popup a bit so it's not super intrusive
         withContext(Dispatchers.IO) { delay(1000) }
     }
