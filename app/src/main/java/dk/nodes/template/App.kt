@@ -1,27 +1,29 @@
 package dk.nodes.template
 
-import android.content.Context
-import androidx.multidex.MultiDex
-import dagger.android.AndroidInjector
-import dagger.android.DaggerApplication
-import dk.nodes.template.inititializers.AppInitializer
-import dk.nodes.template.injection.components.DaggerAppComponent
-import javax.inject.Inject
+import androidx.multidex.MultiDexApplication
+import dk.nodes.template.injection.modules.*
+import dk.nodes.template.presentation.injection.presentationModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 
-class App : DaggerApplication() {
+class App : MultiDexApplication() {
 
-    @Inject lateinit var initializer: AppInitializer
     override fun onCreate() {
         super.onCreate()
-        initializer.init(this)
+        startKoin {
+            androidContext(this@App)
+            modules(
+                    listOf(
+                            appModule,
+                            executorModule,
+                            interactorModule,
+                            restModule,
+                            repositoryModule,
+                            storageModule,
+                            presentationModule
+                    )
+            )
+        }
     }
 
-    override fun attachBaseContext(base: Context) {
-        super.attachBaseContext(base)
-        MultiDex.install(this)
-    }
-
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        return DaggerAppComponent.factory().create(this)
-    }
 }

@@ -1,14 +1,10 @@
 package dk.nodes.template.injection.modules
 
-import dagger.Binds
-import dagger.Module
 import dk.nodes.template.domain.managers.PrefManager
 import dk.nodes.template.storage.PrefManagerImpl
-import javax.inject.Singleton
+import org.koin.dsl.module
+import org.koin.experimental.builder.singleBy
 
-@Module
-abstract class StorageBindingModule {
-    @Binds
-    @Singleton
-    abstract fun bindPrefManager(manager: PrefManagerImpl): PrefManager
+val storageModule = module {
+    singleBy<PrefManager, PrefManagerImpl>()
 }

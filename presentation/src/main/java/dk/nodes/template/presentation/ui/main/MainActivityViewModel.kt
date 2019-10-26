@@ -6,9 +6,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import javax.inject.Inject
 
-class MainActivityViewModel @Inject constructor() : BaseViewModel<MainActivityViewState>() {
+class MainActivityViewModel : BaseViewModel<MainActivityViewState>() {
     override val initState: MainActivityViewState = MainActivityViewState()
 
     fun checkNStack() = viewModelScope.launch {

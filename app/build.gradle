@@ -96,10 +96,10 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:${versions.constraint_layout}"
     implementation 'androidx.multidex:multidex:2.0.1'
 
-    implementation "com.google.dagger:dagger-android:${versions.dagger}"
-    implementation "com.google.dagger:dagger-android-support:${versions.dagger}"
-    kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
-    kapt "com.google.dagger:dagger-android-processor:${versions.dagger}"
+    implementation "org.koin:koin-android:${versions.koin_version}"
+    implementation "org.koin:koin-androidx-scope:${versions.koin_version}"
+    implementation "org.koin:koin-androidx-viewmodel:${versions.koin_version}"
+    implementation "org.koin:koin-androidx-ext:${versions.koin_version}"
 
     implementation "net.hockeyapp.android:HockeySDK:${versions.hockey_sdk}"
     implementation "com.jakewharton.timber:timber:${versions.timber}"
@@ -109,6 +109,7 @@ dependencies {
         exclude module: "retrofit:${versions.retrofit}"
     }
     implementation "com.squareup.okhttp3:okhttp:${versions.okhttp}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${versions.okhttp}"
 
     implementation "dk.nodes.arch:base:${versions.nodes_arch}"
 

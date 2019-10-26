@@ -1,10 +1,5 @@
 package dk.nodes.template.domain.managers
 
-/**
- * Created by bison on 11/10/17.
- *
- * The clean version of JosoPrefs :D (inject into and use from interactors)
- */
 interface PrefManager {
     fun getInt(key: String, defaultValue: Int): Int
     fun setInt(key: String, value: Int)

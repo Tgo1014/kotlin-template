@@ -4,9 +4,8 @@ import android.content.Context
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar
-import javax.inject.Inject
 
-class ViewErrorController @Inject constructor(val context: Context) {
+class ViewErrorController constructor(private val context: Context) {
 
     fun showErrorDialog(error: ViewError, cancelable: Boolean = true, dismissAction: (() -> Unit)? = null) {
         val builder = AlertDialog.Builder(context)

@@ -1,11 +1,13 @@
 package dk.nodes.template.presentation.ui.base
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.ViewModel
 
 abstract class BaseViewModel<T> : ViewModel() {
 
     protected abstract val initState: T
-    protected var _viewState = MediatorLiveData<T>()
+    private var _viewState = MediatorLiveData<T>()
     val viewState: LiveData<T> = _viewState
 
     protected var state

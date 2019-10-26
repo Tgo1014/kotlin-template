@@ -1,9 +1,11 @@
 package dk.nodes.template.presentation.util
 
-import java.io.Serializable
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class ViewError(
     var title: String,
     var message: String,
     var code: Int = 400
-) : Serializable
+) : Parcelable

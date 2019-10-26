@@ -10,9 +10,8 @@ import dk.nodes.template.presentation.util.ViewErrorController
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import javax.inject.Inject
 
-class SampleViewModel @Inject constructor(
+class SampleViewModel  constructor(
     postsInteractor: PostsInteractor
 ) : BaseViewModel<SampleViewState>() {
 

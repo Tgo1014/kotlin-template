@@ -1,32 +1,12 @@
 package dk.nodes.template.presentation.ui.base
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import dagger.android.support.DaggerFragment
-import dk.nodes.template.presentation.extensions.getSharedViewModel
-import dk.nodes.template.presentation.extensions.getViewModel
-import dk.nodes.template.presentation.extensions.lifecycleAwareLazy
+import androidx.fragment.app.Fragment
 import dk.nodes.template.presentation.util.ViewErrorController
-import javax.inject.Inject
+import org.koin.android.ext.android.inject
 
-abstract class BaseFragment : DaggerFragment() {
 
-    @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
+abstract class BaseFragment : Fragment() {
 
-    @Inject lateinit var defaultErrorController: dagger.Lazy<ViewErrorController>
+    val defaultErrorController: ViewErrorController by inject()
 
-    protected inline fun <reified VM : ViewModel> getViewModel(): VM =
-        getViewModel(viewModelFactory)
-
-    protected inline fun <reified VM : ViewModel> getSharedViewModel(): VM =
-        getSharedViewModel(viewModelFactory)
-
-    protected inline fun <reified VM : ViewModel> viewModel(): Lazy<VM> = lifecycleAwareLazy(this) {
-        getViewModel<VM>()
-    }
-
-    protected inline fun <reified VM : ViewModel> sharedViewModel(): Lazy<VM> =
-        lifecycleAwareLazy(this) {
-            getSharedViewModel<VM>()
-        }
 }

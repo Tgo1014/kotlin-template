@@ -37,10 +37,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}"
     kapt "androidx.lifecycle:lifecycle-compiler:${versions.lifecycle}"
     implementation "androidx.core:core-ktx:${versions.ktx}"
-    implementation "com.google.dagger:dagger-android:${versions.dagger}"
-    implementation "com.google.dagger:dagger-android-support:${versions.dagger}"
-    kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
-    kapt "com.google.dagger:dagger-android-processor:${versions.dagger}"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
     testImplementation 'junit:junit:4.12'
@@ -53,4 +49,9 @@ dependencies {
 
     implementation "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
     implementation "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+
+    implementation "org.koin:koin-android:${versions.koin_version}"
+    implementation "org.koin:koin-androidx-scope:${versions.koin_version}"
+    implementation "org.koin:koin-androidx-viewmodel:${versions.koin_version}"
+    implementation "org.koin:koin-androidx-ext:${versions.koin_version}"
 }

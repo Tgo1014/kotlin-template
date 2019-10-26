@@ -1,11 +1,16 @@
 package dk.nodes.template.presentation.injection
 
-import dagger.Module
-import dk.nodes.template.presentation.ui.main.MainActivityBuilder
-import dk.nodes.template.presentation.ui.splash.SplashBuilder
+import dk.nodes.template.presentation.ui.main.MainActivityViewModel
+import dk.nodes.template.presentation.ui.sample.SampleViewModel
+import dk.nodes.template.presentation.ui.splash.SplashViewModel
+import dk.nodes.template.presentation.util.ViewErrorController
+import org.koin.androidx.experimental.dsl.viewModel
+import org.koin.dsl.module
+import org.koin.experimental.builder.single
 
-@Module(includes = [
-    MainActivityBuilder::class,
-    SplashBuilder::class
-])
-class PresentationModule
+val presentationModule = module {
+    viewModel<MainActivityViewModel>()
+    viewModel<SampleViewModel>()
+    viewModel<SplashViewModel>()
+    single<ViewErrorController>()
+}

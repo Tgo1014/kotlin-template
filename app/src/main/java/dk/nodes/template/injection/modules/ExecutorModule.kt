@@ -1,16 +1,10 @@
 package dk.nodes.template.injection.modules
 
-import dagger.Module
-import dagger.Provides
 import dk.nodes.arch.domain.executor.Executor
 import dk.nodes.arch.domain.executor.ThreadExecutor
-import javax.inject.Singleton
+import org.koin.dsl.module
+import org.koin.experimental.builder.singleBy
 
-@Module
-class ExecutorModule {
-    @Provides
-    @Singleton
-    fun provideExecutor(): Executor {
-        return ThreadExecutor()
-    }
+val executorModule = module {
+    singleBy<Executor, ThreadExecutor>()
 }

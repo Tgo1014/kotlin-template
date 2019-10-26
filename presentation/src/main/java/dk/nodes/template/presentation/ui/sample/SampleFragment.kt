@@ -9,6 +9,7 @@ import dk.nodes.template.presentation.R
 import dk.nodes.template.presentation.extensions.observeNonNull
 import dk.nodes.template.presentation.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_sample.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SampleFragment : BaseFragment() {
 
@@ -41,7 +42,7 @@ class SampleFragment : BaseFragment() {
     }
 
     private fun showErrorMessage(state: SampleViewState) {
-        defaultErrorController.get().showErrorSnackbar(requireView(), state.viewError?.consume() ?: return) {
+        defaultErrorController.showErrorSnackbar(requireView(), state.viewError?.consume() ?: return) {
             viewModel.fetchPosts()
         }
     }

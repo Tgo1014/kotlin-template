@@ -7,18 +7,19 @@ import dk.nodes.template.presentation.R
 import dk.nodes.template.presentation.extensions.observeNonNull
 import dk.nodes.template.presentation.ui.base.BaseActivity
 import net.hockeyapp.android.UpdateManager
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity() {
 
-    private val viewModel by viewModel<MainActivityViewModel>()
+    private val mainViewModel: MainActivityViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        viewModel.viewState.observeNonNull(this) { state ->
+        mainViewModel.viewState.observeNonNull(this) { state ->
             handleNStack(state)
         }
-        viewModel.checkNStack()
+        mainViewModel.checkNStack()
     }
 
     private fun handleNStack(viewState: MainActivityViewState) {

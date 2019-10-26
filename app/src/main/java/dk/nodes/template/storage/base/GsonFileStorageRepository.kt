@@ -10,9 +10,9 @@ import java.io.InputStreamReader
 import java.lang.reflect.Type
 
 abstract class GsonFileStorageRepository<T>(
-    val context: Context,
-    val gson: Gson,
-    val filename: String
+        private val context: Context,
+        private val gson: Gson,
+        private val filename: String
 ) {
 
     @Throws(RepositoryException::class)
@@ -27,9 +27,9 @@ abstract class GsonFileStorageRepository<T>(
         } catch (e: Exception) {
             e.printStackTrace()
             throw(RepositoryException(
-                -1,
-                null,
-                "file could not be written to internal storage"
+                    -1,
+                    null,
+                    "file could not be written to internal storage"
             ))
         }
     }
@@ -51,14 +51,13 @@ abstract class GsonFileStorageRepository<T>(
             }
             val json = out.toString()
             Timber.d("Read json = $json")
-            val objects: T = gson.fromJson(json, type)
-            return objects
+            return gson.fromJson(json, type)
         } catch (e: Exception) {
             Timber.e("Catching file not found")
             throw(RepositoryException(
-                -1,
-                null,
-                "File $filename could not be read from internal storage"
+                    -1,
+                    null,
+                    "File $filename could not be read from internal storage"
             ))
         }
     }

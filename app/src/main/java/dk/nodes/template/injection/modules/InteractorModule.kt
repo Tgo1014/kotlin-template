@@ -1,6 +1,9 @@
 package dk.nodes.template.injection.modules
 
-import dagger.Module
+import dk.nodes.template.domain.interactors.PostsInteractor
+import org.koin.dsl.module
+import org.koin.experimental.builder.single
 
-@Module
-class InteractorModule
+val interactorModule = module {
+    single<PostsInteractor>()
+}

@@ -1,7 +1,6 @@
 package dk.nodes.template.domain.interactors
 
 sealed class InteractorResult<out T> {
-
     override fun toString(): String {
         return when (this) {
             is Success<*> -> "Success[data=$data]"
