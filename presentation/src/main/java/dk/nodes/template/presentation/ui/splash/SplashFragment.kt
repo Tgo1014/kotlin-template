@@ -33,7 +33,7 @@ class SplashFragment : BaseFragment() {
     }
 
     private fun showApp() {
-        startActivity(MainActivity.start(requireContext()))
+        MainActivity.start(requireContext())
         activity?.overridePendingTransition(0, 0)
     }
 }

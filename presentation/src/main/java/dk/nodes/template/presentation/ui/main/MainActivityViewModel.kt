@@ -7,6 +7,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class MainActivityViewModel : BaseViewModel<MainActivityViewState>() {
+
     override val initState: MainActivityViewState = MainActivityViewState()
 
     fun example() = viewModelScope.launch {
