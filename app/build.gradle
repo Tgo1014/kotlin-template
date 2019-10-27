@@ -10,7 +10,7 @@ android {
     flavorDimensions "default"
 
     defaultConfig {
-        applicationId "dk.nodes.template"
+        applicationId "tgo1014.template"
         minSdkVersion sdks.minSdkVersion
         targetSdkVersion sdks.targetSdkVersion
         multiDexEnabled true
@@ -65,7 +65,6 @@ android {
         }
         production {
             dimension "default"
-            applicationIdSuffix ".production"
             //signingConfig signingConfigs.production
         }
     }

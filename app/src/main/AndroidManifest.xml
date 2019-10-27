@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="dk.nodes.template">
+    package="tgo1014.template">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission
@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="dk.nodes.template.presentation.ui.splash.SplashActivity">
+        <activity android:name="tgo1014.template.presentation.ui.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -26,7 +26,7 @@
         </activity>
 
         <activity
-            android:name="dk.nodes.template.presentation.ui.main.MainActivity"
+            android:name="tgo1014.template.presentation.ui.main.MainActivity"
             android:exported="false" />
     </application>
 </manifest>

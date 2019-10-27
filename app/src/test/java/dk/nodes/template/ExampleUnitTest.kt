@@ -1,4 +1,4 @@
-package dk.nodes.template
+package tgo1014.template
 
 import org.junit.Test
 

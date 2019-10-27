@@ -1,4 +1,4 @@
-package dk.nodes.template.presentation;
+package tgo1014.template.presentation;
 
 import org.junit.Test;
 

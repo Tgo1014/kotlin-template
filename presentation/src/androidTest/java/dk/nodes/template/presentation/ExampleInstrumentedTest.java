@@ -1,4 +1,4 @@
-package dk.nodes.template.presentation;
+package tgo1014.template.presentation;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("dk.nodes.template.presentation.test", appContext.getPackageName());
+        assertEquals("tgo1014.template.presentation.test", appContext.getPackageName());
     }
 }

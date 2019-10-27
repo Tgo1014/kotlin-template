@@ -6,7 +6,7 @@
             app:startDestination="@id/sampleFragment">
 
     <fragment android:id="@+id/sampleFragment"
-              android:name="dk.nodes.template.presentation.ui.sample.SampleFragment"
+              android:name="tgo1014.template.presentation.ui.sample.SampleFragment"
               tools:layout="@layout/fragment_sample"/>
 
 

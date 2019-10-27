@@ -1,4 +1,4 @@
-package dk.nodes.template
+package tgo1014.template
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4
